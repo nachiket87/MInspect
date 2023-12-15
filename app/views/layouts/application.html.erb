@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Maisoninspect</title>
+    <title><%= page_title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,7 +12,7 @@
   </head>
 
   <body class="h-full">
-    <%= render "shared/header" %>
+    <%= render "shared/header", title: page_title %>
     <main>
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-4 sm:my-6">
         <%= yield %>
