@@ -1,0 +1,15 @@
+<% content_for :title, 'New Inspection Report' %>
+<% if @inspection_report.errors.any? %>
+  <%= render "shared/form/errors", name: "Inspection Report", errors: @inspection_report.errors %>
+<% end %>
+
+<%= form_with model: @inspection_report, class: "max-w-2xl mx-auto space-y-6" do |f| %>
+  <div>
+    <%= f.label :report_title, class: 'form-label' %>
+    <%= f.text_field :title, class: 'form-input' %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Inspection Report", class: "btn-primary w-full" %>
+  </div>
+<% end %>
