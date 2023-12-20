@@ -10,6 +10,11 @@
   </div>
 
   <div>
+    <%= f.label :description, class: 'form-label' %>
+    <%= f.text_field :description, class: 'form-input' %>
+  </div>
+
+  <div>
     <%= f.submit "Create Inspection Report", class: "btn-primary w-full" %>
   </div>
 <% end %>

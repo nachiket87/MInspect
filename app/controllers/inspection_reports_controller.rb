@@ -1,5 +1,6 @@
 class InspectionReportsController < ApplicationController
   def index
+    @inspection_reports = InspectionReport.order("created_at DESC")
   end
 
   def create
