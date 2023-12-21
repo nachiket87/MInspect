@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_21_182448) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_21_192142) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,18 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_21_182448) do
     t.text "description"
   end
 
+  create_table "report_items", force: :cascade do |t|
+    t.string "title"
+    t.text "remarks"
+    t.boolean "approved", default: false, null: false
+    t.integer "severity", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "inspection_report_id"
+    t.index ["inspection_report_id"], name: "index_report_items_on_inspection_report_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "report_items", "inspection_reports"
 end

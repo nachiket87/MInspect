@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  remarks: MyText
+  approved: false
+  severity: 1
+
+two:
+  title: MyString
+  remarks: MyText
+  approved: false
+  severity: 1
