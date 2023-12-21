@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#show"
-  resources :inspection_reports
+  resources :inspection_reports do
+    resources :report_items
+  end
 end

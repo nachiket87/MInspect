@@ -15,7 +15,26 @@
   <p> <%= @inspection_report.description %></p>
 </div>
 
-<h3 class="text-lg font-bold">Report Items:</h3>
-<% if @inspection_report.report_items.exists? %>
-  <%= render @inspection_report.report_items %>
-<% end %>
+<div class="mt-6">
+  <h3 class="text-lg font-bold">Report Items:</h3>
+  <ul role="list" class="divide-y divide-gray-100">
+    <% @inspection_report.report_items.each do |report_item| %>
+      <li>
+        <%= link_to inspection_report_report_item_path(@inspection_report, report_item), class: "flex justify-between my-5 gap-x-6 py-5 rounded px-5 hover:bg-gray-50" do %>
+          <div class="flex min-w-0 gap-x-4">
+            <div class="min-w-0 flex-auto">
+              <p class="text-sm font-semibold leading-6 text-gray-900"><%= report_item.title %></p>
+              <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%= report_item.remarks %></p>
+            </div>
+          </div>
+          <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+            <p class="inline-flex items-center"> 
+              severity:&nbsp;<span class="rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10"><%= report_item.severity %></span>
+            </p>
+            <p class="mt-1 text-xs leading-5 text-gray-500">Last edited <time><%= time_ago_in_words(report_item.updated_at) %></time> ago</p>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
