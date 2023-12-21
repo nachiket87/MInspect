@@ -22,6 +22,7 @@ class InspectionReportsController < ApplicationController
   private
 
   def permitted_params
-    params.require(:inspection_report).permit(:title)
+    debugger
+    params.require(:inspection_report).permit(:title, :description, :cover_image)
   end
 end

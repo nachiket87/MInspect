@@ -1,5 +1,9 @@
 <div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <img class="w-full" src="https://mspublic.centris.ca/media.ashx?id=ADDD250DC866E85DDDDDDDDDD1&t=pi&w=320&h=240&sm=c" alt="Sunset in the mountains">
+  <% if inspection_report.cover_image.attached? %>
+    <%= image_tag inspection_report.cover_image, class: "w-full", alt: inspection_report.title %>
+  <% else %>
+    <img class="w-full" src="https://mspublic.centris.ca/media.ashx?id=ADDD250DC866E85DDDDDDDDDD1&t=pi&w=320&h=240&sm=c" alt="Sunset in the mountains">
+  <% end %>
   <div class="px-6 py-4">
     <div class="font-bold text-xl mb-2"><%= inspection_report.title %></div>
     <p class="text-gray-700 text-base">
