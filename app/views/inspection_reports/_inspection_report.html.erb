@@ -1,13 +1,15 @@
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <% if inspection_report.cover_image.attached? %>
-    <%= image_tag inspection_report.cover_image.variant(:thumb), class: "w-full", alt: inspection_report.title %>
-  <% else %>
-    <img class="w-full" src="https://mspublic.centris.ca/media.ashx?id=ADDD250DC866E85DDDDDDDDDD1&t=pi&w=320&h=240&sm=c" alt="Sunset in the mountains">
-  <% end %>
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2"><%= inspection_report.title %></div>
-    <p class="text-gray-700 text-base">
-      <%= inspection_report.description %>
-    </p>
+<%= link_to inspection_report_path(inspection_report) do %>
+  <div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <% if inspection_report.cover_image.attached? %>
+      <%= image_tag inspection_report.cover_image.variant(:thumb), class: "w-full", alt: inspection_report.title %>
+    <% else %>
+      <img class="w-full" src="https://mspublic.centris.ca/media.ashx?id=ADDD250DC866E85DDDDDDDDDD1&t=pi&w=320&h=240&sm=c" alt="Sunset in the mountains">
+    <% end %>
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2"><%= inspection_report.title %></div>
+      <p class="text-gray-700 text-base">
+        <%= inspection_report.description %>
+      </p>
+    </div>
   </div>
-</div>
+<% end %>

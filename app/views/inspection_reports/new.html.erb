@@ -3,7 +3,7 @@
   <%= render "shared/form/errors", name: "Inspection Report", errors: @inspection_report.errors %>
 <% end %>
 
-<div class="form-container">
+<div class="form-container" data-controller="image-preview">
   <%= form_with model: @inspection_report, class: "max-w-2xl mx-auto space-y-6" do |f| %>
     <div>
       <%= f.label :report_title, class: 'form-label' %>
@@ -15,9 +15,10 @@
       <%= f.text_field :description, class: 'form-input' %>
     </div>
 
-    <div>
+    <div class="mt-2 rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+      <%= image_tag "", data: { image_preview_target: "preview" } %>
       <%= f.label :cover_image, class: 'form-label' %>
-      <%= f.file_field :cover_image, class: 'form-input' %>
+      <%= f.file_field :cover_image, direct_upload: true, data: { image_preview_target: "input", action: "change->image-preview#preview" },  class: 'form-input' %>
     </div>
 
     <div>

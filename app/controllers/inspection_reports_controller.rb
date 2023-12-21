@@ -13,6 +13,7 @@ class InspectionReportsController < ApplicationController
   end
 
   def show
+    @inspection_report = InspectionReport.find(params[:id])
   end
 
   def new
