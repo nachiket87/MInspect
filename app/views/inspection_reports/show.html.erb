@@ -40,11 +40,10 @@
               <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%= report_item.remarks %></p>
             </div>
           </div>
-        <class="shrink-0 sm:flex sm:flex-col">
+          <div class="shrink-0 sm:flex sm:flex-col">
             <p class="inline-flex items-center"> 
               severity:&nbsp;<span class="rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10"><%= report_item.severity %></span>
             </p>
-            <p class="mt-1 text-xs leading-5 text-gray-500">Last edited <time><%= time_ago_in_words(report_item.updated_at) %></time> ago</p>
           </div>
         <% end %>
       </li>
