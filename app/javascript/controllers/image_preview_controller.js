@@ -3,10 +3,6 @@ import { Controller } from "@hotwired/stimulus";
 // Connects to data-controller="image-preview"
 export default class extends Controller {
   static targets = ["input", "preview"];
-  connect() {
-    console.log("hello stimulus");
-  }
-
   preview() {
     let input = this.inputTarget;
     let preview = this.previewTarget;

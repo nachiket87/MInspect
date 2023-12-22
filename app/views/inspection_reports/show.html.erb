@@ -1,4 +1,5 @@
 <%= content_for :title, 'Inspection Report' %>
+<%= render "back_button", back_path: inspection_reports_path %>
 <div class="flex flex-col justify-center items-center gap-2">
   <div>
     <%= image_tag @inspection_report.cover_image.variant(:thumb), class: "rounded-lg bg-gray-100" %>
@@ -16,7 +17,19 @@
 </div>
 
 <div class="mt-6">
-  <h3 class="text-lg font-bold">Report Items:</h3>
+  <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
+    <h1 class="text-4xl font-bold tracking-tight text-gray-900">Report Items</h1>
+    <div class="flex items-center">
+          <div class="relative inline-block text-left">
+            <div>
+              <%= link_to new_inspection_report_report_item_path(@inspection_report), class: "inline-block rounded-md border border-transparent bg-primary-600 px-6 py-2 text-center font-medium text-white hover:bg-primary-700" do %>
+                Add New
+              <% end %>
+            </div>
+          </div>
+    </div>
+  </div>
+  </div>
   <ul role="list" class="divide-y divide-gray-100">
     <% @inspection_report.report_items.each do |report_item| %>
       <li>
@@ -27,7 +40,7 @@
               <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%= report_item.remarks %></p>
             </div>
           </div>
-          <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+        <class="shrink-0 sm:flex sm:flex-col">
             <p class="inline-flex items-center"> 
               severity:&nbsp;<span class="rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10"><%= report_item.severity %></span>
             </p>

@@ -1,0 +1,38 @@
+<% content_for :title, 'New Report Item' %>
+<% if @report_item.errors.any? %>
+  <%= render "shared/form/errors", name: "Report Item", errors: @report_item.errors %>
+<% end %>
+
+<div class="form-container" data-controller="image-preview">
+  <%= form_with model: [@inspection_report, @report_item], class: "max-w-2xl mx-auto space-y-6" do |f| %>
+    <div>
+      <%= f.label :title, class: 'form-label' %>
+      <%= f.text_field :title, class: 'form-input' %>
+    </div>
+
+    <div>
+      <%= f.label :remarks, class: 'form-label' %>
+      <%= f.text_field :remarks, class: 'form-input' %>
+    </div>
+
+    <div>
+      <%= f.label :severity, class: 'form-label' %>
+      <%= f.select :severity, [['Normal', 0], ['Severe', 1], ['Critical', 2]], {}, class: 'form-input' %>
+    </div>
+
+    <div>
+      <%= f.label :inspection_coverage, class: 'form-label' %>
+      <%= f.select :inspection_coverage, [['Not Verified', 0], ['Verified', 1], ['Partially Verified', 2], ['Not Applicable', 3]], {}, class: 'form-input' %>
+    </div>
+
+    <div>
+      <%= f.label :notes, class: 'form-label' %>
+      <%= f.text_area :notes, class: 'form-input', rows: 5 %>
+    </div>
+
+    <div>
+      <%= f.submit "Create Report Item", class: "btn-primary w-full" %>
+    </div>
+  <% end %>
+</div>
+

@@ -1,4 +1,5 @@
 <% content_for :title, 'New Inspection Report' %>
+<%= render "back_button", back_path: inspection_reports_path %>
 <% if @inspection_report.errors.any? %>
   <%= render "shared/form/errors", name: "Inspection Report", errors: @inspection_report.errors %>
 <% end %>
