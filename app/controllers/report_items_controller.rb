@@ -25,7 +25,7 @@ class ReportItemsController < ApplicationController
   private
 
   def permitted_params
-    params.require(:report_item).permit(:title, :remarks, :severity, :inspection_coverage, :notes)
+    params.require(:report_item).permit(:title, :remarks, :severity, :inspection_coverage, :notes, item_images: [])
   end
 
 end

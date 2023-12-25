@@ -6,20 +6,23 @@ export default class extends Controller {
   preview() {
     let input = this.inputTarget;
     let preview = this.previewTarget;
-    let file = input.files[0];
-    let reader = new FileReader();
-    reader.onloadend = function () {
-      preview.src = reader.result;
-    };
-    if (file) {
-      reader.readAsDataURL(file);
-      preview.classList.add("h-48", "py-3");
-    } else {
-      preview.src = "";
+    while (preview.firstChild) {
+      preview.removeChild(preview.firstChild);
     }
-  }
-
-  sayHi() {
-    console.log("hihihi");
+    for (let i = 0; i < input.files.length; i++) {
+      const newImage = document.createElement("img");
+      let file = input.files[i];
+      preview.appendChild(newImage);
+      let reader = new FileReader();
+      reader.onloadend = function () {
+        newImage.src = reader.result;
+      };
+      if (file) {
+        reader.readAsDataURL(file);
+        newImage.classList.add("h-48", "py-3");
+      } else {
+        newImage.src = "";
+      }
+    }
   }
 }
