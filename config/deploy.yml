@@ -28,7 +28,5 @@ env:
        clear:
          POSTGRES_DB: 'maisoninspect_production'
          POSTGRES_USER: 'maison_inspect'
-     files:
-       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
      directories:
        - data:/var/lib/postgresql
