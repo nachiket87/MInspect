@@ -3,7 +3,7 @@ service: maison-inspect
 image: nachiket87/maison-inspect
 
 servers:
-  - 138.197.144.125
+  - 159.203.38.9
 
 registry:
   username: nachiket87
@@ -12,15 +12,15 @@ registry:
 
 env:
  clear:
-   DB_HOST: 138.197.144.125
+   DB_HOST: 159.203.38.9
  secret:
    - RAILS_MASTER_KEY
    - MAISONINSPECT_DATABASE_PASSWORD
 
  accessories:
    db:
-     image: postgres:15
-     host: 138.197.144.125
+     image: postgres:14
+     host: 159.203.38.9
      port: 5432
      env:
        secret:
