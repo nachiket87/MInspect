@@ -6,7 +6,7 @@ image: nachiket87/maison-inspect
 
 # Deploy to these servers.
 servers:
-  - 192.168.0.1
+  - 138.197.144.125
 
 # Credentials for your image host.
 registry:
@@ -22,7 +22,7 @@ registry:
 # Remember to run `kamal env push` after making changes!
 env:
  clear:
-   DB_HOST: 192.168.0.2
+   DB_HOST: 138.197.144.125
  secret:
    - RAILS_MASTER_KEY
    - MAISONINSPECT_DATABASE_PASSWORD
@@ -45,7 +45,7 @@ env:
  accessories:
    db:
      image: postgres:14.10
-     host: 192.168.0.2
+     host: 138.197.144.125
      port: 5432
      env:
        secret:
