@@ -1,4 +1,4 @@
-service: maison-inspect 
+service: maison-inspect
 
 image: nachiket87/maison-inspect
 
@@ -11,22 +11,24 @@ registry:
     - KAMAL_REGISTRY_PASSWORD
 
 env:
- clear:
-   DB_HOST: 159.203.38.9
- secret:
-   - RAILS_MASTER_KEY
-   - MAISONINSPECT_DATABASE_PASSWORD
+  clear:
+    DB_HOST: 159.203.38.9
+  secret:
+    - RAILS_MASTER_KEY
+    - MAISONINSPECT_DATABASE_PASSWORD
 
- accessories:
-   db:
-     image: postgres:14.10
-     host: 159.203.38.9
-     port: 5432
-     env:
-       secret:
-         - MAISONINSPECT_DATABASE_PASSWORD
-       clear:
-         POSTGRES_DB: 'maisoninspect_production'
-         POSTGRES_USER: 'maisoninspect'
-     directories:
-       - data:/var/lib/postgresql/data
+accessories:
+  db:
+    image: postgres:15
+    host: 159.203.38.9
+    port: 5432
+    env:
+      clear:
+        POSTGRES_USER: "maisoninspect"
+        POSTGRES_DB: "maisoninspect_production"
+      secret:
+        - MAISONINSPECT_DATABASE_PASSWORD
+    files:
+      - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
+    directories:
+      - data:/var/lib/postgresql/data
