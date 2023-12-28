@@ -27,6 +27,6 @@ env:
          - MAISONINSPECT_DATABASE_PASSWORD
        clear:
          POSTGRES_DB: 'maisoninspect_production'
-         POSTGRES_USER: 'maison_inspect'
+         POSTGRES_USER: 'maisoninspect'
      directories:
-       - data:/var/lib/postgresql
+       - data:/var/lib/postgresql/data
