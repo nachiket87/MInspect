@@ -21,7 +21,7 @@
         <%= image_tag "" %>
       <% end %>
       <%= f.label :cover_image, class: 'form-label' %>
-      <%= f.file_field :cover_image, direct_upload: true, data: { image_preview_target: "input", action: "change->image-preview#preview" },  class: 'form-input' %>
+      <%= f.file_field :cover_image, data: { image_preview_target: "input", action: "change->image-preview#preview" },  class: 'form-input' %>
     </div>
 
     <div>
