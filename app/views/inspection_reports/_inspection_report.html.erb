@@ -1,5 +1,5 @@
 <%= link_to inspection_report_path(inspection_report) do %>
-  <div class="max-w-sm rounded overflow-hidden shadow-lg h-full">
+  <div class="max-w-sm rounded overflow-hidden shadow-lg h-full w-full">
     <% if inspection_report.cover_image.attached? %>
       <%= image_tag inspection_report.cover_image.variant(:thumb), class: "w-full", alt: inspection_report.title %>
     <% else %>
