@@ -73,3 +73,5 @@ gem "inline_svg", "~> 1.9"
 
 # aws for active storage
 gem "aws-sdk-s3", require: false
+
+gem "devise", "~> 4.9"
