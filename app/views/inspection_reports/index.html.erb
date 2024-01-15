@@ -1,6 +1,6 @@
 <% content_for :title, 'Inspection Reports' %>
 <div class="grid justify-center md:grid-cols-3 gap-4 sm:gap-8">
-  <div class="max-w-sm rounded overflow-hidden shadow-lg">
+  <div class="min-h-[240px] max-w-sm rounded overflow-hidden shadow-lg">
     <%= link_to new_inspection_report_path do %>
     <div class="min-h-[240px] flex justify-center items-center h-full w-full">
       <div class="rounded-full bg-primary-600 p-1.5 text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 mt-2">
@@ -11,5 +11,5 @@
     </div>
       <% end %>
   </div>
-  <%= render partial: "inspection_report", collection: @inspection_reports %>
+  <%= render @inspection_reports %>
 </div>
