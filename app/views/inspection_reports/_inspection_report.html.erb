@@ -1,7 +1,7 @@
 <%= link_to inspection_report_path(inspection_report) do %>
   <div class="max-w-sm rounded overflow-hidden shadow-lg h-full w-full">
     <% if inspection_report.cover_image.attached? %>
-      <%= image_tag inspection_report.cover_image.url, class: "w-full", alt: inspection_report.title %>
+      <%= image_tag inspection_report.cover_image.variant(:thumb), class: "w-full", alt: inspection_report.title %>
     <% else %>
       <img class="w-full" src="https://mspublic.centris.ca/media.ashx?id=ADDD250DC866E85DDDDDDDDDD1&t=pi&w=320&h=240&sm=c" alt="Sunset in the mountains">
     <% end %>
