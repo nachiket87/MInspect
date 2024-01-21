@@ -6,7 +6,7 @@ class InspectionReportsController < ApplicationController
   def create
     @inspection_report = InspectionReport.new(permitted_params)
     if @inspection_report.save
-      redirect_to inspection_reports_path
+      redirect_to inspection_reports_path, notice: "Success! there will be toast!"
     else
       render :new, status: :unprocessable_entity
     end
