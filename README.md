@@ -1,24 +1,14 @@
-# README
+# Welcome to Maison Inspect
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What's Maison Inspect?
 
-Things you may want to cover:
+Maison Inspect is a Ruby on Rails application to create, track and share inspection reports for Homes.
 
-* Ruby version
+Typically, when a real estate unit (condo or house) is sold, a building inspector visits the location, performs routine checks, takes notes and pictures, then proceeds
+to return to his or her office and creates a pdf file to share with the Home Owner or prospective buyer.
 
-* System dependencies
+This is a tedious process where information may be lost. This app helps solve the issue.
 
-* Configuration
+## License
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Maison Inspect is released under the [MIT License](https://opensource.org/licenses/MIT).
