@@ -10,6 +10,9 @@
         <h1 class="text-xl sm:text-3xl font-bold leading-tight tracking-tight text-gray-900"><%= title %></h1>
         <%= content_for :header_navigation %>
       </div>
+      <% if current_user.present? %>
+        <%= button_to "Sign Out", destroy_user_session_path, class: "font-semibold leading-6 text-primary-600 hover:text-primary-500", method: :delete %>
+      <% end %>
     </div>
   </div>
 </header>

@@ -1,10 +1,13 @@
 class InspectionReportsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @inspection_reports = InspectionReport.order("created_at DESC")
   end
 
   def create
     @inspection_report = InspectionReport.new(permitted_params)
+    @inspection_report.user = current_user
     if @inspection_report.save
       redirect_to inspection_reports_path, notice: "Success! there will be toast!"
     else

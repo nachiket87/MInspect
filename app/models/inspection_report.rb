@@ -5,6 +5,8 @@ class InspectionReport < ApplicationRecord
     attachable.variant :thumb, resize_to_fill: [320, 240], preprocessed: true
   end
 
+  belongs_to :user
+
   validate :acceptable_cover_image
 
 
