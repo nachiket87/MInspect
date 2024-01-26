@@ -41,9 +41,8 @@
             </div>
           </div>
           <div class="shrink-0 sm:flex sm:flex-col">
-            <p class="inline-flex items-center"> 
-              severity:&nbsp;<span class="rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10"><%= report_item.severity %></span>
-            </p>
+            <dt class="font-medium text-gray-900">Severity</dt>
+            <%= render "report_items/severity_pill", report_item: report_item %>
           </div>
         <% end %>
       </li>

@@ -11,8 +11,11 @@ export default class extends Controller {
     }
     for (let i = 0; i < input.files.length; i++) {
       const newImage = document.createElement("img");
+      const imageContainer = document.createElement("div");
+      imageContainer.classList.add("flex", "items-center", "justify-center");
+      imageContainer.appendChild(newImage);
       let file = input.files[i];
-      preview.appendChild(newImage);
+      preview.appendChild(imageContainer);
       let reader = new FileReader();
       reader.onloadend = function () {
         newImage.src = reader.result;

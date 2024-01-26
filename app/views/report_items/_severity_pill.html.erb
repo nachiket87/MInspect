@@ -1,0 +1,11 @@
+<% 
+  color_codes = { normal: "green", severe: "red", critical: "red"  }
+  color = color_codes[report_item.severity.to_sym]
+%>
+
+<%= tag.dd class: "mt-2 text-sm text-#{color}-500" do %>
+  <%= tag.span class: "inline-flex items-center rounded-md bg-#{color}-50 px-2 py-1 text-xs font-medium text-#{color}-700 ring-1 ring-inset ring-#{color}-600/10" do %>
+    <%= report_item.severity.titleize %>
+  <% end %>
+<% end %>
+

@@ -31,7 +31,7 @@
     </div>
 
     <div class="mt-2 rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-      <%= tag.div class: "flex", data: { image_preview_target: "preview" } do %>
+      <%= tag.div class: "grid grid-cols-2", data: { image_preview_target: "preview" } do %>
       <% end %>
       <%= f.label :item_images, class: 'form-label' %>
       <%= f.file_field :item_images, direct_upload: true, data: { image_preview_target: "input", action: "change->image-preview#preview" },  class: 'form-input', multiple: true %>
